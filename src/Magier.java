@@ -37,20 +37,22 @@ public class Magier extends Charakter {
     }
     //Vorgabe von Elternklasse
     /**
-     * @param schaden
-     * basierend auf Intelligenz, verringert Mana
+        * basierend auf Intelligenz, verringert Mana
      * @return schaden
      */
-    public double kampf (double schaden){
-        if (mana > 6) {
-            schaden = intelligenz / 4;
-            mana = mana - 5;
-            setMana(mana);
-            return schaden;
-        } else {
-            System.out.println("Mana reicht nicht mehr zum Zaubern");
-            schaden = 0;
-        }
+
+
+    public double berechneSchaden(){
+        double schaden = intelligenz / 4;
+//        if (mana > 6) {
+//            schaden = intelligenz / 4;
+//            mana = mana - 5;
+//            setMana(mana);
+//            return schaden;
+//        } else {
+//            System.out.println("Mana reicht nicht mehr zum Zaubern");
+//            schaden = 0;
+//        }
         return schaden;
     }
 

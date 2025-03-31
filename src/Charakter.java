@@ -2,21 +2,34 @@ import java.util.Random;
 
 public abstract class Charakter {
     private String name;
-    private int gesundheit;
+    private double gesundheit;
     private int initiative;
     private int level;
     private boolean imKampf = false;
 
+    public double getSchaden() {
+        return schaden;
+    }
+
+    public void setSchaden(double schaden) {
+        this.schaden = schaden;
+    }
+
+    private double schaden;
+
     public Charakter(){
         Random random = new Random();
         this.name = Namen[random.nextInt(Namen.length)]; // Namen aus Array Zufallsbestimmt
-        this.gesundheit = 65 + random.nextInt(35); //Gesundheit 65 - 100
+        this.gesundheit = 65 + random.nextDouble(35); //Gesundheit 65 - 100
         this.initiative = 1 + random.nextInt(21); //Initiative 1-20
         this.level = 1 + random.nextInt(21); // Level 1-20
+        this.schaden = berechneSchaden();
     }
     // Vorschrift für Kindklassen, ist mind. eine Methode abstract ist auch die Klasse abstract
 
-    public abstract double kampf (double schaden);
+    public abstract double berechneSchaden();
+
+
 
     private static final String[] Namen = {
             "Ragnar", "Björn", "Leif", "Erik", "Thorvald", "Ivar", "Olaf", "Harald", "Sigurd", "Rollo",
@@ -36,11 +49,11 @@ public abstract class Charakter {
         this.name = name;
     }
 
-    public int getGesundheit() {
+    public double getGesundheit() {
         return gesundheit;
     }
 
-    public void setGesundheit(int gesundheit) {
+    public void setGesundheit(double gesundheit) {
         this.gesundheit = gesundheit;
     }
 

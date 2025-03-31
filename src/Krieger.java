@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Krieger extends Charakter{
     private int ruestung;
-    private int staerke;
+    private double staerke;
 
     public Krieger() {
         super();
@@ -12,23 +12,20 @@ public class Krieger extends Charakter{
     }
     //Kampfmethode Vorgabe von Elternklasse
     /**
-     *
-     * @param schaden
      * schaden basierend auf staerke
      * ruestung des Gegners beruecksichtigen
      * @return schaden
      */
-    public double kampf (double schaden){
-        schaden = staerke / 4;
-
-        return schaden;
+    public double berechneSchaden (){
+       double schaden = staerke / 4;
+       return schaden;
     }
 
-    public int getStaerke() {
+    public double getStaerke() {
         return staerke;
     }
 
-    public void setStaerke(int staerke) {
+    public void setStaerke(double staerke) {
         this.staerke = staerke;
     }
 
