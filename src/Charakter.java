@@ -30,7 +30,6 @@ public abstract class Charakter {
     public abstract double berechneSchaden();
 
 
-
     private static final String[] Namen = {
             "Ragnar", "Björn", "Leif", "Erik", "Thorvald", "Ivar", "Olaf", "Harald", "Sigurd", "Rollo",
             "Gunnar", "Sven", "Torsten", "Halfdan", "Ulf", "Axel", "Thorfinn", "Orm", "Hakon", "Gorm",
